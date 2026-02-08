@@ -7,226 +7,275 @@
 
 <style>
 :root{
-  --blue:#0a5cff;
-  --blue-dark:#083fa6;
-  --light:#f5f8ff;
-  --text:#1e293b;
+  --blue:#0d5bff;
+  --blue-dark:#0a46c2;
+  --bg:#f5f7fb;
+  --text:#0f172a;
+  --muted:#475569;
+  --card:#ffffff;
+  --radius:14px;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  background:var(--light);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);
   color:var(--text);
   line-height:1.6;
 }
 
-/* GLOBAL */
-section{
-  padding:60px 6%;
-}
-h1,h2,h3{
-  margin-bottom:14px;
-}
-p{
-  max-width:720px;
-}
+a{text-decoration:none;color:inherit}
 
-/* BUTTONS */
-.btn{
-  display:inline-block;
+nav{
+  position:sticky;
+  top:0;
+  z-index:50;
   background:#fff;
-  color:var(--blue);
-  padding:12px 22px;
-  border-radius:6px;
-  font-weight:600;
-  text-decoration:none;
-  transition:all .25s ease;
-}
-.btn:hover{
-  background:var(--blue-dark);
-  color:#fff;
+  border-bottom:1px solid #e5e7eb;
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  padding:14px;
 }
 
-/* HERO */
+nav a{
+  font-weight:500;
+  color:var(--muted);
+}
+nav a:hover{color:var(--blue)}
+
+section{
+  padding:80px 20px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+
 .hero{
   background:linear-gradient(135deg,var(--blue),var(--blue-dark));
   color:#fff;
-  min-height:90vh;
-  display:flex;
-  align-items:center;
-}
-.hero h1{
-  font-size:42px;
-}
-.hero p{
-  margin:16px 0 26px;
-  font-size:18px;
+  padding:120px 20px 100px;
 }
 
-/* GRID */
+.hero h1{
+  font-size:44px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:18px;
+  max-width:700px;
+  opacity:.95;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 34px;
+  background:#fff;
+  color:var(--blue);
+  border-radius:999px;
+  font-weight:600;
+  transition:.2s;
+}
+.btn:hover{transform:translateY(-2px)}
+
 .grid{
   display:grid;
-  gap:22px;
-}
-.grid-3{
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
+  margin-top:40px;
 }
 
-/* CARDS */
 .card{
-  background:#fff;
-  padding:26px;
-  border-radius:10px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  background:var(--card);
+  padding:28px;
+  border-radius:var(--radius);
+  box-shadow:0 10px 25px rgba(0,0,0,.06);
 }
 
-/* PRICING */
 .price{
-  font-size:34px;
+  font-size:28px;
   color:var(--blue);
-  margin:10px 0;
+  font-weight:700;
+  margin-top:10px;
 }
 
-/* CONTACT */
-form{
-  max-width:520px;
-}
-input,textarea{
-  width:100%;
-  padding:12px;
-  margin-bottom:12px;
-  border-radius:6px;
-  border:1px solid #cbd5e1;
-}
-
-/* FOOTER */
-footer{
-  background:#020617;
-  color:#cbd5e1;
-  padding:24px;
-  text-align:center;
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px)}
-  to{opacity:1;transform:translateY(0)}
-}
 .reveal{
   opacity:0;
+  transform:translateY(30px);
+  transition:.6s ease;
 }
 .reveal.active{
-  animation:fadeUp 1s ease forwards;
+  opacity:1;
+  transform:none;
+}
+
+form{
+  max-width:600px;
+  margin-top:30px;
+}
+
+input,textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:14px;
+  border-radius:10px;
+  border:1px solid #cbd5f5;
+  font-size:15px;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  background:var(--blue);
+  color:#fff;
+  border:none;
+  border-radius:999px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+footer{
+  background:#0f172a;
+  color:#cbd5f5;
+  padding:30px;
+  text-align:center;
+  font-size:14px;
+}
+
+.music-toggle{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  padding:10px 16px;
+  border-radius:999px;
+  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero reveal">
-  <div>
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_4b9c8f30c6.mp3" type="audio/mpeg">
+</audio>
+<div class="music-toggle" onclick="toggleMusic()">🎵 Music</div>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#team">Team</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="home" class="hero">
+  <div class="container reveal">
     <h1>Alantech Global</h1>
-    <p>We stabilize, optimize, and scale digital products for authors, brands, and platforms that demand results.</p>
+    <p>
+      We stabilize, optimize, and scale digital products for authors,
+      brands, and platforms that demand real results.
+    </p>
     <a href="#contact" class="btn">Get Started</a>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="reveal">
-  <h2>About Us</h2>
-  <p>
-    Alantech Global is a hybrid technical and compliance-focused firm delivering real solutions for
-    web platforms and publishing ecosystems. We remove friction, fix structural issues, and protect growth.
-  </p>
+<section id="about">
+  <div class="container reveal">
+    <h2>About Us</h2>
+    <p>
+      Alantech Global operates as a technical authority.
+      We don’t guess. We diagnose, execute, and validate.
+    </p>
+  </div>
 </section>
 
-<!-- SERVICES -->
-<section class="reveal">
-  <h2>Our Services</h2>
-  <div class="grid grid-3">
-    <div class="card">
-      <h3>Platform Stabilization</h3>
-      <p>Infrastructure audits, backend fixes, and compliance readiness.</p>
-    </div>
-    <div class="card">
-      <h3>Publishing Compliance</h3>
-      <p>Catalog reviews, suppression recovery, and account protection.</p>
-    </div>
-    <div class="card">
-      <h3>Growth Optimization</h3>
-      <p>Conversion, positioning, and technical scaling.</p>
+<section id="services">
+  <div class="container reveal">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">Website Recovery & Repair</div>
+      <div class="card">Security Hardening</div>
+      <div class="card">Performance Optimization</div>
+      <div class="card">Platform Compliance</div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="reveal">
-  <h2>Pricing</h2>
-  <div class="grid grid-3">
-    <div class="card">
-      <h3>Starter</h3>
-      <div class="price">$250</div>
-      <p>Basic audit & recommendations.</p>
-    </div>
-    <div class="card">
-      <h3>Professional</h3>
-      <div class="price">$750</div>
-      <p>Full remediation & compliance handling.</p>
-    </div>
-    <div class="card">
-      <h3>Elite</h3>
-      <div class="price">$1500</div>
-      <p>End-to-end stabilization + priority support.</p>
+<section id="pricing">
+  <div class="container reveal">
+    <h2>Pricing</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Security Fix</h3>
+        <div class="price">$200</div>
+      </div>
+      <div class="card">
+        <h3>SSL & Stability</h3>
+        <div class="price">$500</div>
+      </div>
+      <div class="card">
+        <h3>Ongoing Support</h3>
+        <div class="price">Custom</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="reveal">
-  <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/mpqjzeyg" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="5" placeholder="Your Message"></textarea>
-    <button class="btn" type="submit">Send Message</button>
-  </form>
-  <p style="margin-top:16px">Direct email: <strong>alantech.global@gmail.com</strong></p>
+<section id="team">
+  <div class="container reveal">
+    <h2>Our Team</h2>
+    <p>
+      Engineers, compliance specialists, and recovery experts
+      focused on long-term stability.
+    </p>
+  </div>
 </section>
 
-<!-- FOOTER -->
+<section id="contact">
+  <div class="container reveal">
+    <h2>Contact</h2>
+    <form id="contactForm" action="https://formspree.io/f/mpqjzeyg" method="POST">
+      <input name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="How can we help?" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
 <footer>
-  © 2026 Alantech Global · Built for Scale
+© 2026 Alantech Global
 </footer>
 
-<!-- BACKGROUND MUSIC -->
-<audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6b7c7a09b8.mp3?filename=corporate-ambient-111447.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-// AUDIO (user interaction compliant)
-let started=false;
-window.addEventListener('click',()=>{
-  if(!started){
-    const music=document.getElementById('bgMusic');
-    music.volume=0.15;
-    music.play();
-    started=true;
-  }
-},{once:true});
+const music=document.getElementById("bgMusic");
+let playing=false;
+function toggleMusic(){
+  if(!playing){music.volume=.2;music.play();playing=true}
+  else{music.pause();playing=false}
+}
 
-// SCROLL ANIMATION
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
-      entry.target.classList.add('active');
+      entry.target.classList.add("active");
     }
   });
-},{threshold:0.15});
+},{threshold:.15});
 
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+document.getElementById("contactForm").addEventListener("submit",()=>{
+  setTimeout(()=>document.getElementById("contactForm").reset(),800);
+});
 </script>
 
 </body>
