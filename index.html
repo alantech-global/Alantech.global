@@ -1,281 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Alantech Global</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alantech Global — High-Performance Digital Solutions</title>
 
-<style>
-:root{
-  --blue:#0d5bff;
-  --blue-dark:#0a46c2;
-  --bg:#f5f7fb;
-  --text:#0f172a;
-  --muted:#475569;
-  --card:#ffffff;
-  --radius:14px;
-}
+  <style>
+    :root {
+      --blue-main: #0a5bff;
+      --blue-dark: #003bb5;
+      --blue-light: #e9f0ff;
+      --white: #ffffff;
+      --text-dark: #0b1220;
+      --gray: #6b7280;
+    }
 
-*{box-sizing:border-box;margin:0;padding:0}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-body{
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-}
+    body {
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
 
-a{text-decoration:none;color:inherit}
+    section {
+      padding: 90px 6%;
+    }
 
-nav{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:#fff;
-  border-bottom:1px solid #e5e7eb;
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  padding:14px;
-}
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
 
-nav a{
-  font-weight:500;
-  color:var(--muted);
-}
-nav a:hover{color:var(--blue)}
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; margin-bottom: 20px; }
+    h3 { font-size: 1.3rem; }
 
-section{
-  padding:80px 20px;
-}
+    p {
+      color: var(--gray);
+      max-width: 720px;
+    }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-}
+    .btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--blue-main);
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
 
-.hero{
-  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
-  color:#fff;
-  padding:120px 20px 100px;
-}
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #f2f6ff;
+    }
 
-.hero h1{
-  font-size:44px;
-  margin-bottom:20px;
-}
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-main), var(--blue-dark));
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
 
-.hero p{
-  font-size:18px;
-  max-width:700px;
-  opacity:.95;
-}
+    .hero p {
+      color: #dbe7ff;
+      margin: 20px 0 30px;
+      font-size: 1.1rem;
+    }
 
-.btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:14px 34px;
-  background:#fff;
-  color:var(--blue);
-  border-radius:999px;
-  font-weight:600;
-  transition:.2s;
-}
-.btn:hover{transform:translateY(-2px)}
+    /* GRID */
+    .grid {
+      display: grid;
+      gap: 30px;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
-  margin-top:40px;
-}
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
 
-.card{
-  background:var(--card);
-  padding:28px;
-  border-radius:var(--radius);
-  box-shadow:0 10px 25px rgba(0,0,0,.06);
-}
+    /* CARDS */
+    .card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    }
 
-.price{
-  font-size:28px;
-  color:var(--blue);
-  font-weight:700;
-  margin-top:10px;
-}
+    .card a {
+      color: var(--blue-main);
+      font-weight: 600;
+      text-decoration: none;
+    }
 
-.reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:.6s ease;
-}
-.reveal.active{
-  opacity:1;
-  transform:none;
-}
+    /* VIDEO */
+    .video-wrap video {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
 
-form{
-  max-width:600px;
-  margin-top:30px;
-}
+    /* PRICING */
+    .price {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--blue-main);
+      margin-top: 10px;
+    }
 
-input,textarea{
-  width:100%;
-  padding:14px;
-  margin-bottom:14px;
-  border-radius:10px;
-  border:1px solid #cbd5f5;
-  font-size:15px;
-}
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 0;
+      cursor: pointer;
+    }
 
-button{
-  width:100%;
-  padding:14px;
-  background:var(--blue);
-  color:#fff;
-  border:none;
-  border-radius:999px;
-  font-weight:600;
-  cursor:pointer;
-}
+    .faq-answer {
+      display: none;
+      padding-top: 10px;
+      color: var(--gray);
+    }
 
-footer{
-  background:#0f172a;
-  color:#cbd5f5;
-  padding:30px;
-  text-align:center;
-  font-size:14px;
-}
+    /* CONTACT */
+    form {
+      max-width: 520px;
+    }
 
-.music-toggle{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#fff;
-  border:1px solid #e5e7eb;
-  padding:10px 16px;
-  border-radius:999px;
-  cursor:pointer;
-}
-</style>
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--blue-main);
+      color: var(--white);
+      border: none;
+      padding: 14px;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #f5f8ff;
+      text-align: center;
+      padding: 40px 6%;
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+  </style>
 </head>
 
 <body>
 
-<audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_4b9c8f30c6.mp3" type="audio/mpeg">
-</audio>
-<div class="music-toggle" onclick="toggleMusic()">🎵 Music</div>
-
-<nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#team">Team</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section id="home" class="hero">
-  <div class="container reveal">
+<!-- HERO -->
+<section class="hero">
+  <div>
     <h1>Alantech Global</h1>
-    <p>
-      We stabilize, optimize, and scale digital products for authors,
-      brands, and platforms that demand real results.
-    </p>
+    <p>We stabilize, optimize, and scale websites and digital products for brands, authors, and businesses that demand results.</p>
     <a href="#contact" class="btn">Get Started</a>
   </div>
 </section>
 
-<section id="about">
-  <div class="container reveal">
-    <h2>About Us</h2>
-    <p>
-      Alantech Global operates as a technical authority.
-      We don’t guess. We diagnose, execute, and validate.
-    </p>
-  </div>
+<!-- ABOUT -->
+<section>
+  <h2>About Us</h2>
+  <p>
+    Alantech Global is a performance-driven digital solutions firm. We do not sell templates — we solve problems.
+    From broken websites and platform compliance issues to full redesigns and long-term management, our focus is clarity, stability, and growth.
+  </p>
 </section>
 
-<section id="services">
-  <div class="container reveal">
-    <h2>Services</h2>
-    <div class="grid">
-      <div class="card">Website Recovery & Repair</div>
-      <div class="card">Security Hardening</div>
-      <div class="card">Performance Optimization</div>
-      <div class="card">Platform Compliance</div>
+<!-- SERVICES -->
+<section>
+  <h2>What We Do</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Website Design</h3>
+      <p>Custom, conversion-focused websites built from scratch.</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <div class="card">
+      <h3>Website Redesign</h3>
+      <p>Modernize outdated sites and improve performance.</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <div class="card">
+      <h3>Bug Fixes & Errors</h3>
+      <p>Fix layout issues, broken features, speed, and errors.</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <div class="card">
+      <h3>Website Management</h3>
+      <p>Ongoing updates, monitoring, and optimization.</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <div class="card">
+      <h3>Consultation</h3>
+      <p>Clear technical guidance and action plans.</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <div class="card">
+      <h3>Custom Requests</h3>
+      <p>Tailored solutions beyond standard services.</p>
+      <a href="#">Learn more →</a>
     </div>
   </div>
 </section>
 
-<section id="pricing">
-  <div class="container reveal">
-    <h2>Pricing</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Security Fix</h3>
-        <div class="price">$200</div>
-      </div>
-      <div class="card">
-        <h3>SSL & Stability</h3>
-        <div class="price">$500</div>
-      </div>
-      <div class="card">
-        <h3>Ongoing Support</h3>
-        <div class="price">Custom</div>
-      </div>
-    </div>
+<!-- VIDEO -->
+<section class="video-wrap">
+  <h2>How We Work</h2>
+  <video controls poster="">
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <h2>Client Feedback</h2>
+  <div class="grid grid-3">
+    <div class="card">“They fixed issues no one else could.”</div>
+    <div class="card">“Clear, professional, and results-driven.”</div>
+    <div class="card">“Our site finally performs the way it should.”</div>
   </div>
 </section>
 
-<section id="team">
-  <div class="container reveal">
-    <h2>Our Team</h2>
-    <p>
-      Engineers, compliance specialists, and recovery experts
-      focused on long-term stability.
-    </p>
+<!-- PRICING -->
+<section>
+  <h2>Pricing</h2>
+  <div class="grid grid-3">
+    <div class="card"><h3>Website Design</h3><div class="price">$1,200+</div></div>
+    <div class="card"><h3>Website Redesign</h3><div class="price">$800+</div></div>
+    <div class="card"><h3>Bug Fixes</h3><div class="price">$150+</div></div>
+    <div class="card"><h3>Website Management</h3><div class="price">$300 / month</div></div>
+    <div class="card"><h3>Consultation</h3><div class="price">$100 / hour</div></div>
+    <div class="card"><h3>Custom Requests</h3><div class="price">Quoted</div></div>
   </div>
 </section>
 
+<!-- FAQ -->
+<section>
+  <h2>FAQ</h2>
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <strong>How fast do you start?</strong>
+    <div class="faq-answer">Usually within 24–48 hours.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <strong>Do you work internationally?</strong>
+    <div class="faq-answer">Yes, globally.</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
-  <div class="container reveal">
-    <h2>Contact</h2>
-    <form id="contactForm" action="https://formspree.io/f/mpqjzeyg" method="POST">
-      <input name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="How can we help?" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
+  <h2>Contact Us</h2>
+  <form id="contactForm" action="https://formspree.io/f/xoqgyqvr" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Tell us about your project" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 </section>
 
 <footer>
-© 2026 Alantech Global
+  © 2026 Alantech Global. All rights reserved.
 </footer>
 
 <script>
-const music=document.getElementById("bgMusic");
-let playing=false;
-function toggleMusic(){
-  if(!playing){music.volume=.2;music.play();playing=true}
-  else{music.pause();playing=false}
-}
+  function toggleFaq(el) {
+    const ans = el.querySelector('.faq-answer');
+    ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
+  }
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("active");
-    }
+  document.getElementById('contactForm').addEventListener('submit', function() {
+    setTimeout(() => this.reset(), 100);
   });
-},{threshold:.15});
-
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
-
-document.getElementById("contactForm").addEventListener("submit",()=>{
-  setTimeout(()=>document.getElementById("contactForm").reset(),800);
-});
 </script>
 
 </body>
