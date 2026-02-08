@@ -3,237 +3,230 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Alan Technologies</title>
+<title>Alantech Global</title>
 
 <style>
-:root {
-  --blue-main: #0a2a5c;
-  --blue-soft: #123a7a;
-  --blue-accent: #1e5eff;
-  --white: #ffffff;
-  --gray-soft: #f2f5f9;
-  --text-dark: #1a1a1a;
+:root{
+  --blue:#0a5cff;
+  --blue-dark:#083fa6;
+  --light:#f5f8ff;
+  --text:#1e293b;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+
+body{
+  background:var(--light);
+  color:var(--text);
+  line-height:1.6;
 }
 
-body {
-  background: linear-gradient(135deg, var(--blue-main), var(--blue-soft));
-  color: var(--white);
-  line-height: 1.6;
+/* GLOBAL */
+section{
+  padding:60px 6%;
+}
+h1,h2,h3{
+  margin-bottom:14px;
+}
+p{
+  max-width:720px;
 }
 
-/* Layout */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  background:#fff;
+  color:var(--blue);
+  padding:12px 22px;
+  border-radius:6px;
+  font-weight:600;
+  text-decoration:none;
+  transition:all .25s ease;
+}
+.btn:hover{
+  background:var(--blue-dark);
+  color:#fff;
 }
 
-/* Hero */
-.hero {
-  text-align: center;
-  margin-bottom: 60px;
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  color:#fff;
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+}
+.hero h1{
+  font-size:42px;
+}
+.hero p{
+  margin:16px 0 26px;
+  font-size:18px;
 }
 
-.hero h1 {
-  font-size: 2.6rem;
-  font-weight: 700;
-  margin-bottom: 12px;
+/* GRID */
+.grid{
+  display:grid;
+  gap:22px;
+}
+.grid-3{
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 }
 
-.hero p {
-  font-size: 1.05rem;
-  opacity: 0.9;
-  max-width: 720px;
-  margin: auto;
+/* CARDS */
+.card{
+  background:#fff;
+  padding:26px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-/* Cards */
-.section {
-  background: var(--gray-soft);
-  color: var(--text-dark);
-  border-radius: 16px;
-  padding: 40px;
-  margin-bottom: 40px;
+/* PRICING */
+.price{
+  font-size:34px;
+  color:var(--blue);
+  margin:10px 0;
 }
 
-.section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 16px;
+/* CONTACT */
+form{
+  max-width:520px;
+}
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border-radius:6px;
+  border:1px solid #cbd5e1;
 }
 
-.section p {
-  margin-bottom: 12px;
-  font-size: 0.98rem;
+/* FOOTER */
+footer{
+  background:#020617;
+  color:#cbd5e1;
+  padding:24px;
+  text-align:center;
 }
 
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
 }
-
-.card {
-  background: #ffffff;
-  padding: 28px;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+.reveal{
+  opacity:0;
 }
-
-.card h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-/* Buttons */
-.button {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 14px 28px;
-  background: var(--white);
-  color: var(--blue-main);
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: all 0.25s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.button:hover {
-  background: var(--blue-accent);
-  color: #ffffff;
-}
-
-/* Form */
-form input, form textarea {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 14px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 0.95rem;
-}
-
-form textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  font-size: 0.85rem;
-  opacity: 0.85;
-  padding-bottom: 30px;
-}
-
-/* Audio button */
-.audio-control {
-  margin-top: 18px;
-  font-size: 0.85rem;
+.reveal.active{
+  animation:fadeUp 1s ease forwards;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- HERO -->
+<section class="hero reveal">
+  <div>
+    <h1>Alantech Global</h1>
+    <p>We stabilize, optimize, and scale digital products for authors, brands, and platforms that demand results.</p>
+    <a href="#contact" class="btn">Get Started</a>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Technical Stability. Catalog Authority. Revenue Protection.</h1>
-    <p>
-      Alan Technologies works quietly behind the scenes to stabilize digital assets,
-      resolve platform compliance friction, and protect long-term revenue — without noise,
-      pressure, or agency theatrics.
-    </p>
+<!-- ABOUT -->
+<section class="reveal">
+  <h2>About Us</h2>
+  <p>
+    Alantech Global is a hybrid technical and compliance-focused firm delivering real solutions for
+    web platforms and publishing ecosystems. We remove friction, fix structural issues, and protect growth.
+  </p>
+</section>
 
-    <button class="button" onclick="startAudio()">Enable Ambient Sound</button>
-    <div class="audio-control">Optional — improves focus during review</div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="section">
-    <h2>What We Handle</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Platform Compliance Resolution</h3>
-        <p>
-          Direct coordination with verified specialists to resolve account flags,
-          suppressions, and metadata conflicts without escalation risk.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Technical Stabilization</h3>
-        <p>
-          Backend inconsistencies, indexing errors, storefront behavior, and
-          system-level friction are identified and neutralized.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Catalog & Asset Protection</h3>
-        <p>
-          Long-term structural corrections that prevent repeat disruptions
-          and restore predictable performance.
-        </p>
-      </div>
+<!-- SERVICES -->
+<section class="reveal">
+  <h2>Our Services</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Platform Stabilization</h3>
+      <p>Infrastructure audits, backend fixes, and compliance readiness.</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>Publishing Compliance</h3>
+      <p>Catalog reviews, suppression recovery, and account protection.</p>
+    </div>
+    <div class="card">
+      <h3>Growth Optimization</h3>
+      <p>Conversion, positioning, and technical scaling.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- CONVERSION (Z-LAYER) -->
-  <section class="section">
-    <h2>How Engagement Works</h2>
-    <p>
-      We do not onboard everyone.
-      Each request is reviewed to determine whether intervention is technically justified
-      and commercially viable.
-    </p>
-    <p>
-      If your case qualifies, you will receive a clear action path — not a pitch,
-      not a retainer trap, and no obligation to proceed.
-    </p>
-  </section>
+<!-- PRICING -->
+<section class="reveal">
+  <h2>Pricing</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Starter</h3>
+      <div class="price">$250</div>
+      <p>Basic audit & recommendations.</p>
+    </div>
+    <div class="card">
+      <h3>Professional</h3>
+      <div class="price">$750</div>
+      <p>Full remediation & compliance handling.</p>
+    </div>
+    <div class="card">
+      <h3>Elite</h3>
+      <div class="price">$1500</div>
+      <p>End-to-end stabilization + priority support.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- FORM -->
-  <section class="section">
-    <h2>Request a Technical Review</h2>
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+  <h2>Contact Us</h2>
+  <form action="https://formspree.io/f/mpqjzeyg" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+    <button class="btn" type="submit">Send Message</button>
+  </form>
+  <p style="margin-top:16px">Direct email: <strong>alantech.global@gmail.com</strong></p>
+</section>
 
-    <form action="https://formspree.io/f/mpqjzeyg" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Briefly describe the issue or risk you’re facing" required></textarea>
-      <button type="submit" class="button">Submit for Review</button>
-    </form>
-  </section>
-
-</div>
-
+<!-- FOOTER -->
 <footer>
-  © 2026 Alan Technologies — Structured intervention, not speculation.
+  © 2026 Alantech Global · Built for Scale
 </footer>
 
-<!-- Background Audio -->
-<audio id="bg-audio" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0b3f5b2c45.mp3" type="audio/mpeg">
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6b7c7a09b8.mp3?filename=corporate-ambient-111447.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-function startAudio() {
-  const audio = document.getElementById("bg-audio");
-  audio.volume = 0.15;
-  audio.play();
-}
+// AUDIO (user interaction compliant)
+let started=false;
+window.addEventListener('click',()=>{
+  if(!started){
+    const music=document.getElementById('bgMusic');
+    music.volume=0.15;
+    music.play();
+    started=true;
+  }
+},{once:true});
+
+// SCROLL ANIMATION
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+},{threshold:0.15});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
 
 </body>
