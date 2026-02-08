@@ -3,30 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alantech Global — High-Performance Web & Security Agency</title>
+<title>Alantech Global — Web Engineering & Growth Systems</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --blue:#2563eb;
-  --blue-dark:#1e40af;
-  --bg:#f8fafc;
+  --blue-dark:#1e3a8a;
+  --bg:#f9fafb;
   --panel:#ffffff;
   --text:#0f172a;
   --muted:#475569;
-  --border:#e2e8f0;
-  --accent:#22c55e;
+  --border:#e5e7eb;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-family:Inter,system-ui,sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.6;
+  line-height:1.65;
 }
 
-a{text-decoration:none;color:inherit}
+h1,h2{
+  font-family:"Playfair Display",serif;
+}
+
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
 
 nav{
   position:sticky;
@@ -35,7 +41,7 @@ nav{
   border-bottom:1px solid var(--border);
   display:flex;
   justify-content:center;
-  gap:24px;
+  gap:22px;
   padding:16px;
   z-index:100;
 }
@@ -43,18 +49,17 @@ nav{
 nav a{font-weight:600;color:var(--muted)}
 nav a:hover{color:var(--blue)}
 
-section{padding:80px 20px}
-.container{max-width:1100px;margin:auto}
+section{padding:70px 20px}
+.container{max-width:1150px;margin:auto}
 
 .hero{
   background:linear-gradient(135deg,var(--blue),var(--blue-dark));
   color:white;
-  text-align:center;
-  padding:110px 20px 100px;
+  padding:120px 20px 110px;
 }
 
-.hero h1{font-size:44px;margin-bottom:16px}
-.hero p{max-width:720px;margin:auto;font-size:18px;opacity:.95}
+.hero h1{font-size:46px;margin-bottom:14px}
+.hero p{max-width:760px;font-size:18px;opacity:.95}
 
 .btn{
   display:inline-block;
@@ -68,35 +73,34 @@ section{padding:80px 20px}
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
-  margin-top:40px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+  margin-top:36px;
 }
 
 .card{
   background:var(--panel);
   border:1px solid var(--border);
-  border-radius:14px;
+  border-radius:16px;
   padding:26px;
 }
 
-.card h3{margin-bottom:10px}
-.price{font-size:26px;color:var(--blue);font-weight:800}
-
-.tag{
+.badge{
   display:inline-block;
   background:#eff6ff;
   color:var(--blue);
-  padding:6px 12px;
+  padding:6px 14px;
   border-radius:20px;
   font-size:13px;
   margin-bottom:12px;
+  font-weight:600;
 }
 
-.testimonial{
-  font-size:15px;
-  color:var(--muted);
-}
+.meta{font-size:14px;color:var(--muted);margin-top:10px}
+
+.price{font-size:26px;font-weight:800;color:var(--blue);margin-top:10px}
+
+ul{padding-left:18px;margin-top:12px;color:var(--muted)}
 
 input,textarea{
   width:100%;
@@ -116,14 +120,6 @@ button{
   font-weight:700;
 }
 
-footer{
-  background:#020617;
-  color:#cbd5f5;
-  text-align:center;
-  padding:30px;
-  font-size:14px;
-}
-
 .music{
   position:fixed;
   bottom:20px;
@@ -133,6 +129,14 @@ footer{
   padding:10px 14px;
   border-radius:30px;
   cursor:pointer;
+}
+
+footer{
+  background:#020617;
+  color:#cbd5f5;
+  padding:34px;
+  text-align:center;
+  font-size:14px;
 }
 </style>
 </head>
@@ -146,97 +150,132 @@ footer{
 
 <nav>
 <a href="#services">Services</a>
-<a href="#work">Work</a>
+<a href="#process">Process</a>
 <a href="#pricing">Pricing</a>
-<a href="#trust">Trust</a>
+<a href="#clients">Clients</a>
 <a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
 </nav>
 
-<section class="hero">
+<section class="hero" id="home">
 <div class="container">
-<h1>Websites Built to Perform, Scale, and Convert</h1>
+<h1>Websites That Look Beautiful — and Work Relentlessly</h1>
 <p>
-We design, fix, secure, and optimize websites for businesses that
-care about speed, credibility, and long-term stability.
+We design, rebuild, secure, and scale websites for brands that want
+long-term growth, not short-term patches.
 </p>
-<a class="btn" href="#contact">Request Assessment</a>
+<a class="btn" href="#contact">Talk to Us</a>
 </div>
 </section>
 
 <section id="services">
 <div class="container">
 <h2>What We Do</h2>
+
 <div class="grid">
-<div class="card"><span class="tag">Build</span><h3>Website Design</h3></div>
-<div class="card"><span class="tag">Improve</span><h3>Website Redesign</h3></div>
-<div class="card"><span class="tag">Fix</span><h3>Bug Fixing & Recovery</h3></div>
-<div class="card"><span class="tag">Speed</span><h3>Performance Optimization</h3></div>
-<div class="card"><span class="tag">Security</span><h3>SSL & XSS Protection</h3></div>
-<div class="card"><span class="tag">Manage</span><h3>Website Management</h3></div>
+<div class="card">
+<span class="badge">Design</span>
+<h3><a href="#design">Website Design</a></h3>
+<p>Custom, conversion-focused websites built from the ground up.</p>
+<a href="#contact">Contact us about design →</a>
+</div>
+
+<div class="card">
+<span class="badge">Redesign</span>
+<h3><a href="#redesign">Website Redesign</a></h3>
+<p>UX, SEO, and performance-driven redesigns.</p>
+<a href="#contact">Contact us about redesign →</a>
+</div>
+
+<div class="card">
+<span class="badge">Fix</span>
+<h3><a href="#fixes">Bug Fixing & Recovery</a></h3>
+<p>Error resolution, broken layouts, crashes, and platform issues.</p>
+<a href="#contact">Fix my website →</a>
+</div>
+
+<div class="card">
+<span class="badge">Optimize</span>
+<h3><a href="#optimization">Performance Optimization</a></h3>
+<p>Speed, responsiveness, and Core Web Vitals improvements.</p>
+<a href="#contact">Optimize my site →</a>
+</div>
+
+<div class="card">
+<span class="badge">Secure</span>
+<h3><a href="#security">Security & SSL</a></h3>
+<p>SSL setup, XSS mitigation, and stability hardening.</p>
+<a href="#contact">Secure my site →</a>
+</div>
+
+<div class="card">
+<span class="badge">Manage</span>
+<h3><a href="#management">Website Management</a></h3>
+<p>Ongoing maintenance, updates, and monitoring.</p>
+<a href="#contact">Manage my website →</a>
+</div>
 </div>
 </div>
 </section>
 
-<section id="work">
+<section id="process">
 <div class="container">
-<h2>Selected Client Work</h2>
-<p>Design, redesign, SEO optimization, and performance improvements.</p>
+<h2>How We Work</h2>
 <div class="grid">
-<div class="card">Victory Wear Apparel</div>
-<div class="card">Blaken Press</div>
-<div class="card">Projekt Glitter</div>
-<div class="card">Hungry Harvest</div>
+<div class="card"><strong>1. Diagnose</strong><p class="meta">We assess before touching anything.</p></div>
+<div class="card"><strong>2. Plan</strong><p class="meta">Clear scope, timeline, and cost.</p></div>
+<div class="card"><strong>3. Execute</strong><p class="meta">Clean, tested implementation.</p></div>
+<div class="card"><strong>4. Support</strong><p class="meta">Post-delivery assistance.</p></div>
 </div>
 </div>
 </section>
 
 <section id="pricing">
 <div class="container">
-<h2>Pricing</h2>
+<h2>Pricing Overview</h2>
 <div class="grid">
 <div class="card"><h3>Website Design</h3><div class="price">From $2,500</div></div>
 <div class="card"><h3>Website Redesign</h3><div class="price">From $1,800</div></div>
 <div class="card"><h3>Bug Fixing</h3><div class="price">From $500</div></div>
-<div class="card"><h3>Management</h3><div class="price">$300 / mo</div></div>
+<div class="card"><h3>Management</h3><div class="price">$300 / month</div></div>
 <div class="card"><h3>Consultation</h3><div class="price">$150</div></div>
 <div class="card"><h3>Custom Requests</h3><div class="price">Quoted</div></div>
 </div>
 </div>
 </section>
 
-<section id="trust">
+<section id="clients">
 <div class="container">
-<h2>Why Clients Trust Us</h2>
+<h2>Client Experience</h2>
 <div class="grid">
-<div class="card testimonial">“Our site became faster and cleaner within days.”<br><strong>— Retail Brand Owner</strong></div>
-<div class="card testimonial">“Clear process, no pressure, real results.”<br><strong>— Ecommerce Founder</strong></div>
-<div class="card testimonial">Recognized workflows inspired by Google, HubSpot & Adobe standards.</div>
+<div class="card">“Fast, reliable, and transparent.”<br><strong>— Ecommerce Founder</strong></div>
+<div class="card">“Our site finally feels professional.”<br><strong>— Brand Owner</strong></div>
+<div class="card">Methods aligned with Google, HubSpot & Adobe practices.</div>
 </div>
 </div>
 </section>
 
 <section id="faq">
 <div class="container">
-<h2>FAQ</h2>
+<h2>Frequently Asked Questions</h2>
 <div class="grid">
-<div class="card"><strong>Do you take upfront payments?</strong><p>No. Pricing is confirmed after assessment.</p></div>
-<div class="card"><strong>Do you work with existing sites?</strong><p>Yes, most of our work is fixing and improving live sites.</p></div>
-<div class="card"><strong>Do I need Stripe?</strong><p>No. Billing is handled manually after approval.</p></div>
+<div class="card"><strong>Do you require upfront payment?</strong><p>No. Pricing is confirmed after assessment.</p></div>
+<div class="card"><strong>Do you work on existing websites?</strong><p>Yes. Most of our work is on live sites.</p></div>
+<div class="card"><strong>Is this suitable for small businesses?</strong><p>Yes, if quality matters.</p></div>
 </div>
 </div>
 </section>
 
 <section id="contact">
 <div class="container">
-<h2>Contact</h2>
+<h2>Contact Us</h2>
 <form action="https://formspree.io/f/mpqjzeyg" method="POST" onsubmit="setTimeout(()=>this.reset(),500)">
 <input name="name" placeholder="Your Name" required>
-<input name="email" type="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Describe your issue"></textarea>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Tell us what you need"></textarea>
 <button type="submit">Send Message</button>
 </form>
-<p style="margin-top:16px">Email: <strong>alantech.global@gmail.com</strong></p>
+<p class="meta">Email: <strong>alantech.global@gmail.com</strong></p>
 </div>
 </section>
 
@@ -245,8 +284,8 @@ care about speed, credibility, and long-term stability.
 </footer>
 
 <script>
-let m=false;const a=document.getElementById("bgm");
-function toggleMusic(){m? a.pause():a.play();m=!m}
+let playing=false;const bgm=document.getElementById("bgm");
+function toggleMusic(){playing?bgm.pause():bgm.play();playing=!playing;}
 </script>
 
 </body>
