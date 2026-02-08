@@ -1,320 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alantech Global — Engineering, Security & Trust</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Alan Technologies</title>
 
 <style>
-:root{
-  --bg:#f5f7fb;
-  --panel:#ffffff;
-  --border:#e5e7eb;
-  --text:#1f2937;
-  --muted:#6b7280;
-  --accent:#4f46e5;
-  --accent-soft:#c7d2fe;
-  --gold:#d4af37;
+:root {
+  --blue-main: #0a2a5c;
+  --blue-soft: #123a7a;
+  --blue-accent: #1e5eff;
+  --white: #ffffff;
+  --gray-soft: #f2f5f9;
+  --text-dark: #1a1a1a;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-  background:linear-gradient(180deg,#f5f7fb,#eef1f7);
-  color:var(--text);
-  line-height:1.7;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-a{text-decoration:none;color:inherit}
-
-nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(255,255,255,.9);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border);
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  padding:14px;
+body {
+  background: linear-gradient(135deg, var(--blue-main), var(--blue-soft));
+  color: var(--white);
+  line-height: 1.6;
 }
 
-nav a{
-  font-weight:500;
-  color:var(--muted);
+/* Layout */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
 }
 
-nav a:hover{color:var(--accent)}
-
-section{
-  padding:64px 20px;
-  border-bottom:1px solid var(--border);
+/* Hero */
+.hero {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.container{
-  max-width:1100px;
-  margin:auto;
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
-.hero{
-  text-align:center;
-  padding-top:110px;
+.hero p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  max-width: 720px;
+  margin: auto;
 }
 
-h1{
-  font-size:46px;
-  line-height:1.15;
-  margin-bottom:16px;
+/* Cards */
+.section {
+  background: var(--gray-soft);
+  color: var(--text-dark);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 40px;
 }
 
-h2{
-  font-size:32px;
-  margin-bottom:14px;
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
 }
 
-h3{
-  font-size:18px;
-  margin-bottom:6px;
+.section p {
+  margin-bottom: 12px;
+  font-size: 0.98rem;
 }
 
-p{
-  color:var(--muted);
-  max-width:820px;
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
-.hero p{
-  font-size:18px;
-  margin:18px auto 30px;
+.card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
-.btn{
-  display:inline-block;
-  padding:14px 30px;
-  background:linear-gradient(135deg,var(--accent),#6366f1);
-  color:#fff;
-  border-radius:14px;
-  font-weight:600;
-  transition:.25s;
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(79,70,229,.25);
+/* Buttons */
+.button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 14px 28px;
+  background: var(--white);
+  color: var(--blue-main);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.trust-line{
-  margin-top:18px;
-  font-size:14px;
-  color:#475569;
+.button:hover {
+  background: var(--blue-accent);
+  color: #ffffff;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
-  margin-top:32px;
+/* Form */
+form input, form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
 }
 
-.card{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:24px;
-  transition:.25s;
+form textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 26px rgba(0,0,0,.06);
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  padding-bottom: 30px;
 }
 
-.price{
-  font-size:26px;
-  font-weight:700;
-  color:var(--accent);
-  margin-top:8px;
-}
-
-ul{
-  margin-top:12px;
-  padding-left:18px;
-  color:var(--muted);
-}
-
-form{
-  max-width:600px;
-  margin-top:26px;
-}
-
-input,textarea{
-  width:100%;
-  padding:14px;
-  margin-bottom:12px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  background:#fafafa;
-}
-
-button{
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:14px;
-  background:linear-gradient(135deg,var(--accent),#6366f1);
-  color:white;
-  font-weight:600;
-  cursor:pointer;
-}
-
-.music-control{
-  position:fixed;
-  bottom:18px;
-  right:18px;
-  background:white;
-  border:1px solid var(--border);
-  padding:10px 16px;
-  border-radius:30px;
-  cursor:pointer;
-  font-size:14px;
-  box-shadow:0 6px 16px rgba(0,0,0,.08);
-}
-
-footer{
-  padding:30px;
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
+/* Audio button */
+.audio-control {
+  margin-top: 18px;
+  font-size: 0.85rem;
 }
 </style>
 </head>
 
 <body>
 
-<audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_4b9c8f30c6.mp3" type="audio/mpeg">
-</audio>
-<div class="music-control" onclick="toggleMusic()">🔊 Ambient Audio</div>
+<div class="container">
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#trust">Trust</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section id="home" class="hero">
-  <div class="container">
-    <h1>Technical Problems Solved<br>Without Uncertainty</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Technical Stability. Catalog Authority. Revenue Protection.</h1>
     <p>
-      We help businesses fix complex website, security, and platform issues
-      with clarity, discipline, and measurable outcomes.
+      Alan Technologies works quietly behind the scenes to stabilize digital assets,
+      resolve platform compliance friction, and protect long-term revenue — without noise,
+      pressure, or agency theatrics.
     </p>
-    <a href="#contact" class="btn">Request Assessment</a>
-    <div class="trust-line">
-      No upfront commitment • Clear scope • You decide after diagnosis
-    </div>
-  </div>
-</section>
 
-<section id="about">
-  <div class="container">
-    <h2>How We Work</h2>
-    <p>
-      Most failures come from guessing. We start with diagnosis,
-      explain what is wrong in plain language, and only proceed
-      when the solution is agreed and understood.
-    </p>
-  </div>
-</section>
+    <button class="button" onclick="startAudio()">Enable Ambient Sound</button>
+    <div class="audio-control">Optional — improves focus during review</div>
+  </section>
 
-<section id="services">
-  <div class="container">
-    <h2>Services</h2>
-    <div class="grid">
-      <div class="card">Website Design & Redesign</div>
-      <div class="card">Website Management & Maintenance</div>
-      <div class="card">Bug Fixing & Recovery</div>
-      <div class="card">Performance Optimization</div>
-      <div class="card">SSL Configuration & Hardening</div>
-      <div class="card">XSS & Vulnerability Mitigation</div>
-      <div class="card">TLP File Configuration</div>
-    </div>
-  </div>
-</section>
+  <!-- SERVICES -->
+  <section class="section">
+    <h2>What We Handle</h2>
 
-<section id="pricing">
-  <div class="container">
-    <h2>Pricing</h2>
-    <div class="grid">
-      <div class="card"><h3>TLP Configuration</h3><div class="price">$300</div></div>
-      <div class="card"><h3>XSS Fix</h3><div class="price">$200</div></div>
-      <div class="card"><h3>SSL Setup</h3><div class="price">$500</div></div>
-      <div class="card"><h3>Maintenance & Optimization</h3><div class="price">Custom</div></div>
-    </div>
-    <p style="margin-top:20px">
-      Platforms: Shopify, WordPress, WIX, Squarespace, BigCommerce, WooCommerce
-    </p>
-  </div>
-</section>
-
-<section id="trust">
-  <div class="container">
-    <h2>Why This Is Low Risk</h2>
     <div class="grid">
       <div class="card">
-        <h3>Clarity First</h3>
-        <p>You know what is wrong before any decision is made.</p>
+        <h3>Platform Compliance Resolution</h3>
+        <p>
+          Direct coordination with verified specialists to resolve account flags,
+          suppressions, and metadata conflicts without escalation risk.
+        </p>
       </div>
+
       <div class="card">
-        <h3>No Pressure</h3>
-        <p>You proceed only if the solution makes sense to you.</p>
+        <h3>Technical Stabilization</h3>
+        <p>
+          Backend inconsistencies, indexing errors, storefront behavior, and
+          system-level friction are identified and neutralized.
+        </p>
       </div>
+
       <div class="card">
-        <h3>Accountability</h3>
-        <p>Work is scoped, documented, and verified.</p>
+        <h3>Catalog & Asset Protection</h3>
+        <p>
+          Long-term structural corrections that prevent repeat disruptions
+          and restore predictable performance.
+        </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <div class="container">
-    <h2>Request an Assessment</h2>
+  <!-- CONVERSION (Z-LAYER) -->
+  <section class="section">
+    <h2>How Engagement Works</h2>
     <p>
-      Explain the issue briefly. If we can help, we will tell you how.
-      If we cannot, we will tell you that too.
+      We do not onboard everyone.
+      Each request is reviewed to determine whether intervention is technically justified
+      and commercially viable.
     </p>
+    <p>
+      If your case qualifies, you will receive a clear action path — not a pitch,
+      not a retainer trap, and no obligation to proceed.
+    </p>
+  </section>
+
+  <!-- FORM -->
+  <section class="section">
+    <h2>Request a Technical Review</h2>
 
     <form action="https://formspree.io/f/mpqjzeyg" method="POST">
-      <input name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input name="website" placeholder="Website (optional)">
-      <textarea name="message" placeholder="Describe the issue"></textarea>
-      <button type="submit">Send Request</button>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Briefly describe the issue or risk you’re facing" required></textarea>
+      <button type="submit" class="button">Submit for Review</button>
     </form>
+  </section>
 
-    <p style="margin-top:16px">
-      Direct email: <strong>alantech.global@gmail.com</strong>
-    </p>
-  </div>
-</section>
+</div>
 
 <footer>
-© 2026 Alantech Global. Built for clarity and trust.
+  © 2026 Alan Technologies — Structured intervention, not speculation.
 </footer>
 
+<!-- Background Audio -->
+<audio id="bg-audio" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0b3f5b2c45.mp3" type="audio/mpeg">
+</audio>
+
 <script>
-const music=document.getElementById("bgMusic");
-let playing=false;
-function toggleMusic(){
-  if(!playing){music.volume=0.25;music.play();playing=true}
-  else{music.pause();playing=false}
+function startAudio() {
+  const audio = document.getElementById("bg-audio");
+  audio.volume = 0.15;
+  audio.play();
 }
-window.addEventListener("click",()=>{if(!playing){music.volume=0.25;music.play();playing=true}}, {once:true});
 </script>
 
 </body>
